@@ -29,10 +29,13 @@ const Login = () =>{
     
     //function to authenticate the user if he already has an account registered
     const authUser = () =>{
-        const number = phoneNumberRef.current.value
-        const pwd = pwdRef.current.value
-        
-
+        Axios.post('http://localhost:3001/api/login',{
+                    number: phoneNumberRef.current.value,
+                    pwd: pwdRef.current.value
+                }).then(()=>{
+                        alert('Login successful')
+                        window.location.href="/PatientDashboard"
+                })
     }
     return(
         <>

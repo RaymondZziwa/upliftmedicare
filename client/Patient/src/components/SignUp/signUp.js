@@ -103,10 +103,13 @@ const SignUp = () =>{
                      Age:localStorage.getItem("age"),
                      Gender:localStorage.getItem("gender"),
                      Dob:localStorage.getItem("dob")
-                }).then(()=>{
-                    console.log(localStorage.getItem("firstName"))
-                    alert('registration successful')
-                    window.location.href="/login"
+                }).then((response)=>{
+                   if(response == '1'){
+                        alert('The number you are trying to use is already registered')
+                   }else{
+                        alert('registration successful')
+                        window.location.href="/login"
+                   }
                 })
                 // ...
               }).catch((error) => {
