@@ -31,7 +31,7 @@ db.connect((err)=>{
     }
 })
 
-
+//function for signing up/registering new users
 app.post('/api/register',(req,res)=>{
     const fname = req.body.FirstName
     const lname = req.body.LastName
@@ -44,71 +44,60 @@ app.post('/api/register',(req,res)=>{
     const saltRounds = 10;
     const encryptedPwd = bcrypt.hashSync(pwd, saltRounds);
     //missing code to check if user already exists
-    const sqlInsert = "Insert into users(FirstName,Lastname,PhoneNumber,Gender,Age,DOB,Password) values(?,?,?,?,?,?,?)"
-        db.query(sqlInsert,[fname,lname,contact,gender,age,dob,encryptedPwd],(err,result)=>{
-            if(err){
-                console.log(err)
-            }else{
-                res.send(result)
-            }
-        })
-    // let status = 0;
-    // //code checking if the phone number being registered by the new user already exists in the database
-    // const sqlCheck = "Select * from users where PhoneNumber = ?"
-    // db.query(sqlCheck,[contact],(err,result)=>{
-    //     if(result >=1){
-    //       status = 1;
-    //     }else{
-    //       status = 0
-    //     }
-    // })
-
-
-    // //if number exists user is registered else no...
-    // if(status === 0){
-        
-    // }else{
-    //     res.send('1')
-    // }
+    db.query('SELECT * FROM users WHERE PhoneNumber = ?;',contact, function(error, results) {
+        // If there is an issue with the query, output the error
+        if (error) throw error;
+        // If the account exists
+        if (results.length>0) {
+            res.send('The phone number you are trying to registered is already associated with an account.Please use a different number.')
+        } else {
+            const sqlInsert = "Insert into users(FirstName,Lastname,PhoneNumber,Gender,Age,DOB,Password) values(?,?,?,?,?,?,?)"
+            db.query(sqlInsert,[fname,lname,contact,gender,age,dob,encryptedPwd],(err,result)=>{
+                if(err){
+                    console.log(err)
+                }else{
+                    res.send('Your account has been successfully registered');
+                }
+            })
+        }			
+    })   
 })
 
 
+
+//function handling the user Log In
 app.post('/api/login',(req,res)=>{
-    //fetching user login input submitted from the front end
-        const number = req.body.number
-        const pwd = req.body.pwd
+     //fetching user login input submitted from the front end
+         const number = req.body.number
+         const pwd = req.body.pwd
         
-        let fetchedPwd;
-        //password has to be hashed and compared to what is stored in the database
-         db.query('select Password FROM users WHERE PhoneNumber =?',[number], (err,results)=>{
-            if(err) throw err;
-            if(results.length > 0){
-                 fetchedPwd = results[0].Password;
-                // bcrypt.compareSync(myPlaintextPassword, hash);
-            }
-         })   
-        //checking if the input is not empty
-        if(number !='' && pwd!='' ){
-        // Execute SQL query that'll select the account from the database based on the specified phone number and password
-		db.query('SELECT * FROM users WHERE PhoneNumber = ? AND Password = ?', [number, pwd], function(error, results, fields) {
-			// If there is an issue with the query, output the error
-			if (error) throw error;
-			// If the account exists
-			if (results.length > 0 && bcrypt.compareSync(myPlaintextPassword, hash)===true) {
-				// Authenticate the user
-				req.session.loggedin = true;
-				req.session.number = number;
-				// Redirect to home page
-				response.redirect('/home');
-			} else {
-				response.send('Incorrect Phone Number and/or Password!');
-			}			
-			response.end();
-		});
-        }else{
-            res.send('Please enter Phone Number and Password!');
-		    res.end();
-        }
+         //checking if the input is not empty
+//         if(number !='' && pwd!='' ){
+//         // Execute SQL query that'll select the account from the database based on the specified phone number and password
+// 		db.query('SELECT * FROM users WHERE PhoneNumber = ?;',number, function(error, results) {
+// 			// If there is an issue with the query, output the error
+// 			if (error) throw error;
+// 			// If the account exists
+// 			if (results.length>0) {
+//                 bcrypt.compare(pwd,results[0].Password,(err,response)=>{
+//                     if(err) throw error;
+//                     if(response){
+//                         res.send(results)
+//                     }else{
+//                         res.send('Incorrect Phone Number or Password');
+//                     }
+//                 })
+//                 // res.send('1');
+// 				// // Authenticate the user
+// 				// req.session.loggedin = true;
+// 				// req.session.number = number;
+// 			} else {
+// 				res.send('User doesnt exist');
+// 			}			
+// 		});
+//         }else{
+//             res.send('Please enter Phone Number and Password!');
+//         }
 })
 
 

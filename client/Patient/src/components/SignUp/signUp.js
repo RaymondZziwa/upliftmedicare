@@ -104,12 +104,7 @@ const SignUp = () =>{
                      Gender:localStorage.getItem("gender"),
                      Dob:localStorage.getItem("dob")
                 }).then((response)=>{
-                   if(response == '1'){
-                        alert('The number you are trying to use is already registered')
-                   }else{
-                        alert('registration successful')
-                        window.location.href="/login"
-                   }
+                   alert(`${response.data}`)
                 })
                 // ...
               }).catch((error) => {
