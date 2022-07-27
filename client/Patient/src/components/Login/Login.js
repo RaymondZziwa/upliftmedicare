@@ -33,8 +33,8 @@ const Login = () =>{
                     number: `+256${phoneNumberRef.current.value}`,
                     pwd: pwdRef.current.value
                 }).then((res)=>{
-                      console.log(res)
-                       })
+                      console.log(res.data)
+                    })
     }
     return(
         <>

@@ -72,32 +72,32 @@ app.post('/api/login',(req,res)=>{
          const pwd = req.body.pwd
         
          //checking if the input is not empty
-//         if(number !='' && pwd!='' ){
-//         // Execute SQL query that'll select the account from the database based on the specified phone number and password
-// 		db.query('SELECT * FROM users WHERE PhoneNumber = ?;',number, function(error, results) {
-// 			// If there is an issue with the query, output the error
-// 			if (error) throw error;
-// 			// If the account exists
-// 			if (results.length>0) {
-//                 bcrypt.compare(pwd,results[0].Password,(err,response)=>{
-//                     if(err) throw error;
-//                     if(response){
-//                         res.send(results)
-//                     }else{
-//                         res.send('Incorrect Phone Number or Password');
-//                     }
-//                 })
-//                 // res.send('1');
+         if(number !='' && pwd!='' ){
+         // Execute SQL query that'll select the account from the database based on the specified phone number and password
+ 		db.query('SELECT * FROM users WHERE PhoneNumber = ?;',number, function(error, results) {
+ 			// If there is an issue with the query, output the error
+ 			if (error) throw error;
+ 			// If the account exists
+			if (results.length>0) {
+                 bcrypt.compare(pwd,results[0].Password,(err,response)=>{
+                     if(err) throw error;
+                     if(response){
+                        res.send(results)
+                     }else{
+                         res.send('Incorrect Phone Number or Password');
+                     }
+                 })
+//               // res.send('1');
 // 				// // Authenticate the user
 // 				// req.session.loggedin = true;
 // 				// req.session.number = number;
-// 			} else {
-// 				res.send('User doesnt exist');
-// 			}			
-// 		});
-//         }else{
-//             res.send('Please enter Phone Number and Password!');
-//         }
+ 			} else {
+				res.send('User doesnt exist');
+ 			}			
+ 		});
+         }else{
+             res.send('Please enter Phone Number and Password!');
+         }
 })
 
 
