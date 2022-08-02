@@ -1,0 +1,24 @@
+
+.bg{
+    background-image:url(Imgs/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+}
+
+.linkattr {
+    font: 1em Arial, sans-serif;
+    /* Set up the hover */
+    /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+    background-image: linear-gradient(#11517F, #11517F), linear-gradient(white, white);
+    background-size: 0 100%, auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all .2s ease-out;
+  }
+  
+  .linkattr:hover {
+    background-color: #11517F;
+    color: #fff;
+    background-size: 100% 100%, auto;
+  }
