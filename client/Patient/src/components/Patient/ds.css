@@ -22,3 +22,11 @@
     color: #fff;
     background-size: 100% 100%, auto;
   }
+
+  .social{
+    transition: all 0.2s ease-in-out;
+  }
+
+  .social:hover{
+    transform: scale(1.5);
+  }

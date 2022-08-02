@@ -60,7 +60,8 @@ const PatientHomePage = () =>{
         fontWeight:'bold',
         margin:'auto',
         color:'#11517F',
-        fontSize:'1.2rem'
+        fontSize:'1.2rem',
+
     }
     return(
         <>
@@ -85,12 +86,12 @@ const PatientHomePage = () =>{
             </div>
             <Row style={{margin:'auto',marginTop:'2px',display:'flex',justifyContent:'center'}}  >
                     <Col sm='12' md='12' lg='12' xl='12'>
-                        <img src={insta} alt='logo' style={footer}/>
-                        <img src={twitter} alt='logo' style={footer}/>
-                        <img src={facebook} alt='logo' style={footer}/>
-                        <img src={email} alt='logo' style={footer}/>
-                        <img src={linkedIn} alt='logo' style={footer}/>              
-                        <img src={youtube} alt='logo' style={footer}/>
+                        <img src={insta} alt='logo' style={footer} className='social'/>
+                        <img src={twitter} alt='logo' style={footer} className='social'/>
+                        <img src={facebook} alt='logo' style={footer} className='social'/>
+                        <img src={email} alt='logo' style={footer} className='social'/>
+                        <img src={linkedIn} alt='logo' style={footer} className='social'/>              
+                        <img src={youtube} alt='logo' style={footer} className='social'/>
                         <p style={helpline}>Customer Helpline: +256 785 987 809</p>   
                     </Col>
             </Row>
