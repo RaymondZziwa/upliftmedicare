@@ -33,8 +33,12 @@ const Login = () =>{
                     number: `+256${phoneNumberRef.current.value}`,
                     pwd: pwdRef.current.value
                 }).then((res)=>{
-                      console.log(res.data)
-                    })
+                            if(res.status === 200){
+                                alert(`${res.data}`)
+                            }else{
+                                alert('Error! Please try again.Ensure you are using the correct log in details')
+                            }         
+                })
     }
     return(
         <>
@@ -47,7 +51,7 @@ const Login = () =>{
                                 <Form.Group>
                                     <FormControl  type="number" placeholder="Phone Number" style={styleFormControl} ref={phoneNumberRef} required/>
                                     <Form.Control type='password' placeholder='Enter Password' style={styleFormControl} ref={pwdRef} required />
-                                    <button type="submit" className='btn btn-outline-primary' style={styleButton} onClick={authUser}>Login</button>
+                                    <button type="button" className='btn btn-outline-primary' style={styleButton} onClick={authUser}>Login</button>
                                 </Form.Group>
                             </Form>
             </Col>
@@ -56,8 +60,8 @@ const Login = () =>{
        </Card>
         <div className='w-100 text-center mt-2'>
         Don't have an account? <Link to='/register'>Register</Link>
-    </div>
-    <div id='recaptcha-container'></div>
+        </div>
+        <div id='recaptcha-container'></div>
         </>
     )
 }
