@@ -59,7 +59,7 @@ const Login = () =>{
             </Card.Body>
        </Card>
         <div className='w-100 text-center mt-2'>
-        Don't have an account? <Link to='/register'>Register</Link>
+        Don't have an account? <Link to='/Register'>Register</Link>
         </div>
         <div id='recaptcha-container'></div>
         </>

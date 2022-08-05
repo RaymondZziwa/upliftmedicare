@@ -9,6 +9,9 @@ import email from './Imgs/email.png'
 import insta from './Imgs/instagram.png'
 import linkedIn from './Imgs/linkedin.png'
 import bg from './Imgs/bg.png'
+import { Link } from 'react-router-dom'
+
+
 const PatientHomePage = () =>{
     const userName = {
         border:'3px solid #11517F',
@@ -24,7 +27,8 @@ const PatientHomePage = () =>{
         textAlign:'center',
         fontWeight:'bold',
         margin:'auto',
-        padding:'5px'
+        padding:'5px',
+        textDecoration:'none'
     }
     const userNameParent = {
         border:'3px solid #11517F',
@@ -41,6 +45,7 @@ const PatientHomePage = () =>{
         margin:'2px',
         width:'240px',
         cursor:'pointer',
+        color:'black'
     }
 
     const logoStyle = {
@@ -63,36 +68,42 @@ const PatientHomePage = () =>{
         fontSize:'1.2rem',
 
     }
+
+    const emailHandler = (event) =>{
+        event.preventDefault()
+        window.location = "mailto:upliftcreative5@gmail.com"
+    }
+
     return(
         <>
             <div className='bg'>
-                <Row style={{margin:'auto',marginTop:'10px',display:'flex',justifyContent:'center'}}  >
+                <Row style={{margin:'auto',marginTop:'2px',display:'flex',justifyContent:'center'}}  >
                     <Col sm='12' md='12' lg='12' xl='12'>
-                        <img src={logo} alt='logo' style={logoStyle}/>
+                        <Link to='/PatientDashboard'><img src={logo} alt='logo' style={logoStyle}/></Link>
                         <div style={userNameParent}><p style={userName}>Raymond</p></div>
                     </Col>
                 </Row>
-                <Row style={{margin:'auto',marginTop:'10px'}}>
+                <Row style={{margin:'auto',marginTop:'4px'}}>
                     <Col sm='12' md='12' lg='12' xl='12'  style={{margin:'auto',display:'flex',justifyContent:'flex-end'}}>
-                        <div style={linkParent}><p className='linkattr' style={link}>Self Examination</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Call An Ambulance(beta)</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Book An Appointment</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Call A Doctor</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Medical History</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Appointment History</p></div>
-                        <div style={linkParent}><p className='linkattr' style={link}>Edit Profile</p></div>
+                        <Link to='/SelfExamination'><div style={linkParent}><p className='linkattr' style={link}>Self Examination</p></div></Link>
+                        <Link to='/CallAnAmbulance'><div style={linkParent}><p className='linkattr' style={link}>Call An Ambulance(beta)</p></div></Link>
+                        <Link to='/BookAnAppointment'><div style={linkParent}><p className='linkattr' style={link}>Book An Appointment</p></div></Link>
+                        <Link to='/CallADoctor'><div style={linkParent}><p className='linkattr' style={link}>Call A Doctor</p></div></Link>
+                        <Link to='/MedicalHistory'><div style={linkParent}><p className='linkattr' style={link}>Medical History</p></div></Link>
+                        <Link to='/AppointmentHistory'><div style={linkParent}><p className='linkattr' style={link}>Appointment History</p></div></Link>
+                        <Link to='/PatientProfile'><div style={linkParent}><p className='linkattr' style={link}>Edit Profile</p></div></Link>
                     </Col>
                 </Row>
             </div>
             <Row style={{margin:'auto',marginTop:'2px',display:'flex',justifyContent:'center'}}  >
                     <Col sm='12' md='12' lg='12' xl='12'>
-                        <img src={insta} alt='logo' style={footer} className='social'/>
-                        <img src={twitter} alt='logo' style={footer} className='social'/>
-                        <img src={facebook} alt='logo' style={footer} className='social'/>
-                        <img src={email} alt='logo' style={footer} className='social'/>
-                        <img src={linkedIn} alt='logo' style={footer} className='social'/>              
-                        <img src={youtube} alt='logo' style={footer} className='social'/>
-                        <p style={helpline}>Customer Helpline: +256 785 987 809</p>   
+                        <a href='https://instagram.com/uplift_africa'><img src={insta} alt='logo' style={footer} className='social'/></a>
+                        <a href='https://twitter.com/uplift_africa'><img src={twitter} alt='logo' style={footer} className='social'/></a>
+                        <a href='https://www.facebook.com/upliftcreativeafrica/'><img src={facebook} alt='logo' style={footer} className='social'/></a>
+                        <img src={email} alt='logo' style={footer} className='social' onClick={emailHandler}/>
+                        <a href=' https://www.linkedin.com/company/uplift-creative-ltd/'><img src={linkedIn} alt='logo' style={footer} className='social'/> </a>                   
+                        <a href='https://www.youtube.com/channel/UCB5fIP8M7ov4VPHJsi4f-Gg'><img src={youtube} alt='logo' style={footer} className='social'/></a>
+                        <a href="tel:+256785987809"><p style={helpline}>Customer Helpline: +256 785 987 809</p></a>
                     </Col>
             </Row>
         </>

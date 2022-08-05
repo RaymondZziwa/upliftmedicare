@@ -3,8 +3,9 @@
     background-image:url(Imgs/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 890px;
 }
+
 
 .linkattr {
     font: 1em Arial, sans-serif;
@@ -30,3 +31,29 @@
   .social:hover{
     transform: scale(1.5);
   }
+
+.active{
+  background-image: linear-gradient(#11517F, #11517F), linear-gradient(#11517F, #11517F);
+  color: #fff;
+}
+ 
+
+.save{
+  margin-top: 2px;
+  border:2.5px solid #11517F;
+  border-radius:50px;
+  background-color: white;
+  width: 100%;
+}
+.saveParent{
+  border:2.5px solid #11517F;
+  border-radius:50px;
+  padding:2px;
+  margin-top: 20px;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
