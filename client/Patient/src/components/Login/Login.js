@@ -42,7 +42,7 @@ const Login = () =>{
     }
     return(
         <>
-               <Card>
+            <Card>
             <Card.Body>
             <Row style={{margin:'auto'}}>
             <Col sm='12' md='12' lg='12' xl='12'>

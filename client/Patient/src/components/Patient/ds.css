@@ -39,12 +39,20 @@
  
 
 .save{
-  margin-top: 2px;
   border:2.5px solid #11517F;
   border-radius:50px;
   background-color: white;
   width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
+
+.save:hover{
+  background-color:#11517F;
+  color: white;
+}
+
+
 .saveParent{
   border:2.5px solid #11517F;
   border-radius:50px;
@@ -57,3 +65,37 @@ a{
   text-decoration: none;
   color: black;
 }
+
+.newconsultationbtn{
+  border:2.5px solid #11517F;
+  border-radius:50px;
+  background-color: white;
+  width: 30%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.newconsultationbtnParent{
+  border:2.5px solid #11517F;
+  border-radius:50px;
+  padding:2px;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1080px) {  
+    .navbar {
+      margin:auto;
+      display:flex;
+      justify-content:flex-end
+    }
+}
+
+@media screen and (max-width: 500px) {  
+  .navbar {
+    display:flex;
+    justify-content: center;  
+  }
+
+}
+

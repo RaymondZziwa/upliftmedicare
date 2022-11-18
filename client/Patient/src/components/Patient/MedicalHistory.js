@@ -10,7 +10,7 @@ import linkedIn from './Imgs/linkedin.png'
 import { Link } from 'react-router-dom'
 
 
-const ProfilePage = () =>{
+const MedicalHistory = () =>{
     const userName = {
         border:'3px solid #11517F',
         borderRadius:'50px',
@@ -111,35 +111,24 @@ const ProfilePage = () =>{
                         <Link to='/CallAnAmbulance'><div style={linkParent}><p className='linkattr' style={link}>Call An Ambulance(beta)</p></div></Link>
                         <Link to='/BookAnAppointment'><div style={linkParent}><p className='linkattr' style={link}>Book An Appointment</p></div></Link>
                         <Link to='/CallADoctor'><div style={linkParent}><p className='linkattr' style={link}>Call A Doctor</p></div></Link>
-                        <Link to='/MedicalHistory'><div style={linkParent}><p className='linkattr' style={link}>Medical History</p></div></Link>
+                        <Link to='/MedicalHistory'><div style={linkParent}><p className='linkattr  active' style={link}>Medical History</p></div></Link>
                         <Link to='/AppointmentHistory'><div style={linkParent}><p className='linkattr' style={link}>Appointment History</p></div></Link>
-                        <Link to='/PatientProfile'><div style={linkParent}><p className='linkattr active' style={link}>Edit Profile</p></div></Link>
+                        <Link to='/PatientProfile'><div style={linkParent}><p className='linkattr' style={link}>Edit Profile</p></div></Link>
                     </Col>
                     <Row style={{marginTop:'5%'}}>
-                    <Col sm='12' md='6' lg='7' xl='7'>
+                    <Col sm='12' md='3' lg='3' xl='3'>
                     
                     </Col>
-                    <Col  sm='12' md='4' lg='3' xl='3' style={{margin:'auto',float:'right',border:'3px solid #11517F',height:'500px',borderRadius:'50px',textAlign:'center',borderBottom:'none',borderTop:'none'}}  className='container'>
-                        <h5 style={headings}>Update Profile</h5>
-                        <Form>
-                            <span><p style={{fontWeight:'bold'}}>Change phone number:</p></span>
-                            <input type='number' placeholder='old phone number' className='formInput' style={formInput} required/>
-                            <input type='number' placeholder='new phone number' className='formInput'  style={formInput} required/><br></br>
-                            <div className='saveParent'><button className='save'>Update Phone Number</button></div>
-                        </Form>
-                        <Form style={{marginTop:'30px'}}>
-                        <span><p style={{fontWeight:'bold'}}>Change password:</p></span>
-                            <input type='password' placeholder='old password' className='formInput' style={formInput} required/>
-                            <input type='password' placeholder='new password' className='formInput'  style={formInput} required/><br></br>
-                            <div className='saveParent'><button className='save'>Update Password</button></div>
-                        </Form>
+                    <Col  sm='12' md='7' lg='7' xl='7' style={{margin:'auto',float:'right',border:'3px solid #11517F',borderRadius:'50px',textAlign:'center',borderBottom:'none',borderTop:'none'}}  className='container'>
+                        <h5 style={headings}>Medical History</h5>
+
                     </Col>
                 </Row>
                 </Row>
             </div>
             <Row style={{margin:'auto',marginTop:'2px',display:'flex',justifyContent:'center'}}  >
                     <Col sm='12' md='12' lg='12' xl='12'>
-                        <a href='https://instagram.com/uplift_africa'><img src={insta} alt='logo' style={footer} className='social'/></a>
+                        <a href='https://www.instagram.com/upliftcreativeafrica/'><img src={insta} alt='logo' style={footer} className='social'/></a>
                         <a href='https://twitter.com/uplift_africa'><img src={twitter} alt='logo' style={footer} className='social'/></a>
                         <a href='https://www.facebook.com/upliftcreativeafrica/'><img src={facebook} alt='logo' style={footer} className='social'/></a>
                         <img src={email} alt='logo' style={footer} className='social' onClick={emailHandler}/>
@@ -153,4 +142,4 @@ const ProfilePage = () =>{
 }
 
 
-export default ProfilePage;
+export default MedicalHistory;
