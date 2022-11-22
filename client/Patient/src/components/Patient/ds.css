@@ -99,3 +99,6 @@ a{
 
 }
 
+#disabled-attr{
+  pointer-events: none;
+}

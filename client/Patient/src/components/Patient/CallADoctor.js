@@ -108,7 +108,7 @@ const CallADoctor = () =>{
                 <Row style={{margin:'auto',marginTop:'4px'}}>
                     <Col sm='12' md='12' lg='12' xl='12'  style={{margin:'auto',display:'flex',justifyContent:'flex-end'}}>
                         <Link to='/SelfExamination'><div style={linkParent}><p className='linkattr' style={link}>Self Examination</p></div></Link>
-                        <Link to='/CallAnAmbulance'><div style={linkParent}><p className='linkattr' style={link}>Call An Ambulance(beta)</p></div></Link>
+                        <Link to='/CallAnAmbulance' id='disabled-attr'><div style={linkParent}><p className='linkattr' style={link}>Call An Ambulance(beta)</p></div></Link>
                         <Link to='/BookAnAppointment'><div style={linkParent}><p className='linkattr' style={link}>Book An Appointment</p></div></Link>
                         <Link to='/CallADoctor'><div style={linkParent}><p className='linkattr active' style={link}>Call A Doctor</p></div></Link>
                         <Link to='/MedicalHistory'><div style={linkParent}><p className='linkattr' style={link}>Medical History</p></div></Link>

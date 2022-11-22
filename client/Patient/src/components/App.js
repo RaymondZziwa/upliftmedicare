@@ -7,6 +7,7 @@ import Login from "./Login/Login";
 import AppointmentHistory from "./Patient/AppointmentHistory";
 import MedicalHistory from "./Patient/MedicalHistory";
 import CallADoctor from "./Patient/CallADoctor";
+import BookAnAppointment from "./Patient/BookAnAppointment";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/CallADoctor'>
             <CallADoctor />
+        </Route>
+        <Route path='/BookAnAppointment'>
+            <BookAnAppointment />
         </Route>
         <Route path='/PatientProfile'>
             <ProfilePage />
