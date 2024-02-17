@@ -22,7 +22,7 @@ const Login = () =>{
     }
 
     const phoneNumberRef = useRef()
-    const pwdRef = useRef()
+    const pwdRef = useRef();
 
     
     
